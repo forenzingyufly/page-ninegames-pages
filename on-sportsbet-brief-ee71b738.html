@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>足彩竞猜 · 专题阅览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+      padding: 1.5rem;
+    }
+
+    .page-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      background: linear-gradient(to bottom right, #eef1f5, #dce2ea);
+      border-radius: 24px;
+      padding: 2.8rem 2rem;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f2b3a;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #3f4c5c;
+      max-width: 600px;
+      margin: 0.2rem auto 0.6rem;
+      font-weight: 350;
+      border-top: 1px solid #c6d0da;
+      display: inline-block;
+      padding-top: 0.4rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2d3f54;
+      border: 1px solid #d3dce6;
+      margin-top: 0.2rem;
+    }
+
+    /* 卡片通用设计 */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #dde3ea;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 480;
+      margin-bottom: 0.9rem;
+      color: #1a293b;
+      border-left: 4px solid #6783a3;
+      padding-left: 0.9rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #2b3b4e;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-link {
+      color: #1f4f7a;
+      text-decoration: none;
+      border-bottom: 1px dashed #8ba5c3;
+      font-weight: 480;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .highlight-link:hover {
+      color: #0b2c49;
+      border-bottom: 1px solid #1f4f7a;
+    }
+
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .two-column .card {
+      flex: 1 1 260px;
+      margin-bottom: 0;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 0.9rem 1.4rem;
+      margin-bottom: 0.7rem;
+      border-left: 3px solid #b5c7db;
+      border: 1px solid #e6ecf2;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      font-size: 1.02rem;
+      color: #1f2f42;
+    }
+
+    .faq-item p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      background: #e8ecf2;
+      border-radius: 40px;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      border: 1px solid #d2dbe5;
+      color: #2a3b4f;
+      font-size: 0.98rem;
+      margin-top: 1rem;
+    }
+
+    .footer-note a {
+      color: #1d5079;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #718aa3;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 1px solid #1d5079;
+      color: #0b3150;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .two-column {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 首页横幅 hero -->
+  <div class="hero">
+    <h1>场次 · 判断 · 节奏</h1>
+    <div class="sub">从稳定入口开始，了解足彩竞猜</div>
+    <div class="badge">⚽ 专题 · 杂志式导读</div>
+  </div>
+
+  <!-- 三段自然介绍：卡片1 背景说明 -->
+  <div class="card">
+    <h2>一个平实的起点</h2>
+    <p>足彩竞猜，一直存在于日常体育讨论和周末社交里。很多人把它当作业余调剂，也有人习惯在赛事日打开熟悉的地方，看看赔率变化、球队近况和伤停信息。这个领域的核心从来不是“灵机一动”，而是持续稳定的观察。</p>
+    <p>我们访问某个站点，往往不只是为了一个结果，而是想获得整理过的信息、清晰的赛事列表，以及那份自己判断后的小小参与感。从浏览记录看，不少用户更偏爱界面简单、更新及时的页面——不必过于花哨，但内容要可靠。</p>
+  </div>
+
+  <!-- 卡片2：特点与场景（双列布局） -->
+  <div class="two-column">
+    <div class="card">
+      <h2>日常场景</h2>
+      <p>工作日下午刷刷联赛时间表，周末晚上边看直播边对照数据。对于许多爱好者来说，<a href="https://on-sportsbet.com" class="highlight-link">足彩竞猜</a>的窗口就像一本随手翻的杂志，不需要每次重新适应。</p>
+      <p>有人偏好赛前看交锋记录，有人喜欢临场看首发名单——无论哪种习惯，一个稳定的访问入口能省去很多时间。</p>
+    </div>
+    <div class="card">
+      <h2>页面说明</h2>
+      <p>当前页面即为该站点的专题介绍页，帮助你快速理解站点定位：它专注于提供竞猜赛事列表、基础数据以及简洁的交互入口，不堆砌广告，也不做浮夸引导。</p>
+      <p>你可以在任何时间通过这个页面进入核心功能，保持浏览的连续性。</p>
+    </div>
+  </div>
+
+  <!-- 卡片3：稳定入口说明 + FAQ摘要 -->
+  <div class="card">
+    <h2>关于“稳定入口”</h2>
+    <p>一个可靠的域、一致的布局，比什么都重要。很多朋友收藏夹里放了不少链接，但最终常去的往往只有一两个。对于日常参与<a href="https://on-sportsbet.com" class="highlight-link">足彩竞猜</a>的用户而言，页面加载速度、清晰的分区、更新频率，是衡量是否好用的基础。</p>
+
+    <div style="margin-top: 1.6rem;">
+      <div class="faq-item">
+        <strong>▸ 这个页面和主站是什么关系？</strong>
+        <p>本页是主站 <a href="https://on-sportsbet.com" class="highlight-link">足彩竞猜</a> 的辅助介绍页，旨在让新访客提前了解站点的风格和内容范围，减少摸索时间。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 信息更新频率怎么样？</strong>
+        <p>赛事数据与赔率变化通常跟随主流体育数据源同步，每个比赛日都有多次更新。你可以把该站点当作一个固定的赛事信息聚合点。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 是否需要注册或下载？</strong>
+        <p>不需要额外注册或安装任何软件。直接通过浏览器访问 <a href="https://on-sportsbet.com" class="highlight-link">足彩竞猜</a> 即可查看所有公开内容。部分功能可能需要简单登录，但整体流程非常轻量。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <span>杂志式导读 · 所有内容均指向一个稳定的页面：</span>
+    <a href="https://on-sportsbet.com">足彩竞猜</a>
+    <span style="display: inline-block; margin-left: 0.5rem;">— 保持清晰，保持日常。</span>
+  </div>
+
+</div>
+</body>
+</html>
